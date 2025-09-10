@@ -9,6 +9,9 @@
       
         <!-- add HTML code here -->
 
+         <input id="userinput" type="text" placeholder="Add an item" />
+         <button id="enter">Enter</button>
+
       <ul>
          <li>Notebook</li>
          <li>Jello</li>
@@ -22,6 +25,23 @@
       
         // add code here
 
+        const input = document.getElementById('useriput');
+        const button = dicument.getElementById('enter');
+        const list = document.querySelector('ul');
+
+        function addItem(){
+         const text = input.value();
+         if (text.length == 0) return;
+
+         const li = document.createElement('li');
+         li.textContent = text;
+         list.appendChild(li);
+
+         input.value = '';
+        }
+
+
+        butoon.addEventListener('click', addItem);
       </script>
  
    </body>
